@@ -76,6 +76,8 @@ export default function Home() {
 
       const whitelistContract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer)
 
+      console.log(whitelistContract)
+
       const tx = await whitelistContract.startPresale()
 
       setLoading(true)
@@ -100,7 +102,7 @@ export default function Home() {
 
       if (!_presaleStarted) await getOwner() 
 
-      setPresaleEnded(_presaleStarted)
+      setPresaleStarted(_presaleStarted)
 
       return _presaleStarted
     } catch (error) {
